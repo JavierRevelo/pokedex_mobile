@@ -1,5 +1,3 @@
-import 'package:flutter/foundation.dart';
-
 class Pokemon {
   int id;
   String name;

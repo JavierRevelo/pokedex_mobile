@@ -4,6 +4,7 @@ import 'package:pokedex_mobile/firebase_options.dart';
 import 'package:pokedex_mobile/providers/category_provider.dart';
 import 'package:pokedex_mobile/providers/pokemon_provider.dart';
 import 'package:pokedex_mobile/screens/category_screen.dart';
+import 'package:pokedex_mobile/screens/login_screen.dart';
 import 'package:pokedex_mobile/screens/pokemon_favorite_list.dart';
 import 'package:pokedex_mobile/screens/pokemon_screen.dart';
 import 'package:pokedex_mobile/screens/pokemons_details.dart';
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
           initialRoute: MainWidget.routeName,
           routes: {
             MainWidget.routeName: (context) => const MainWidget(),
-            PokemonDetailScreen.routeName:(context) => const PokemonDetailScreen()
+            PokemonDetailScreen.routeName:(context) => const PokemonDetailScreen(),
           },
         ));
   }
@@ -53,7 +54,8 @@ class _MainWidgetState extends State<MainWidget> {
   final List<Widget> _mainWidgets = const [
     CategoryScreen(),
     PokemonScreenWidget(),
-    PokemonFavoriteListScreen()
+    PokemonFavoriteListScreen(),
+    LoginScreen()
   ];
 
   void _onTapItem(int index) {
@@ -68,10 +70,10 @@ class _MainWidgetState extends State<MainWidget> {
       body: _mainWidgets[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: const [
-          BottomNavigationBarItem(
-              icon: Icon(Icons.category), label: 'Categorias'),
+          BottomNavigationBarItem(icon: Icon(Icons.category), label: 'Categorias'),
           BottomNavigationBarItem(icon: Icon(Icons.details), label: 'Pokemons'),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'Favoritos')
+          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'Favoritos'),
+          BottomNavigationBarItem(icon: Icon(Icons.person_2), label: 'Login')
         ],
         currentIndex: _selectedIndex,
         onTap: _onTapItem,
