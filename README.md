@@ -15,7 +15,7 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-#Imagenes
+# Imagenes
 
 ![Imegen 1](https://github.com/JavierRevelo/pokedex_mobile/assets/110837948/10c522fa-a113-47a6-b959-4bbe4a6e7f24)
 
