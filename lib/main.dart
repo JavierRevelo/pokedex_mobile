@@ -73,7 +73,7 @@ class _MainWidgetState extends State<MainWidget> {
           BottomNavigationBarItem(icon: Icon(Icons.category), label: 'Categorias'),
           BottomNavigationBarItem(icon: Icon(Icons.details), label: 'Pokemons'),
           BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'Favoritos'),
-          BottomNavigationBarItem(icon: Icon(Icons.person_2), label: 'Login')
+          //BottomNavigationBarItem(icon: Icon(Icons.person_2), label: 'Login')
         ],
         currentIndex: _selectedIndex,
         onTap: _onTapItem,
