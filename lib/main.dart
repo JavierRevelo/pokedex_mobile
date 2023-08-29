@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:pokedex_mobile/firebase_options.dart';
 import 'package:pokedex_mobile/providers/category_provider.dart';
+import 'package:pokedex_mobile/providers/login_provider.dart';
 import 'package:pokedex_mobile/providers/pokemon_provider.dart';
 import 'package:pokedex_mobile/screens/category_screen.dart';
 import 'package:pokedex_mobile/screens/login_screen.dart';
@@ -28,10 +29,12 @@ class MyApp extends StatelessWidget {
         providers: [
           ChangeNotifierProvider(create: (context) => CategoryProvider()),
           ChangeNotifierProvider(create: (context) => PokemonProvider()),
+          ChangeNotifierProvider(create: (context) => AuthenticationRepository()), // Agrega el LoginProvider
         ],
         child: MaterialApp(
           title: 'Pokedex',
-          initialRoute: MainWidget.routeName,
+          //initialRoute: MainWidget.routeName,
+           initialRoute: LoginScreen.routeName, // Cambia la ruta inicial a LoginScreen
           routes: {
             MainWidget.routeName: (context) => const MainWidget(),
             PokemonDetailScreen.routeName:(context) => const PokemonDetailScreen(),
@@ -73,7 +76,7 @@ class _MainWidgetState extends State<MainWidget> {
           BottomNavigationBarItem(icon: Icon(Icons.category), label: 'Categorias'),
           BottomNavigationBarItem(icon: Icon(Icons.details), label: 'Pokemons'),
           BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'Favoritos'),
-          //BottomNavigationBarItem(icon: Icon(Icons.person_2), label: 'Login')
+          BottomNavigationBarItem(icon: Icon(Icons.person_2), label: 'Login')
         ],
         currentIndex: _selectedIndex,
         onTap: _onTapItem,
